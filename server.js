@@ -7,7 +7,7 @@ const io = require('socket.io')(server, {
 });
 const process = require('dotenv').config().parsed;
 const fileUpload = require('express-fileupload');
-const initWhatsApp = (userId, tries, io) => {
+const initWhatsApp = async (userId, tries, io) => {
     const client = new WhatsAppClient(userId, io);
     // create api
     const api = await client.setUpApi(tries);
